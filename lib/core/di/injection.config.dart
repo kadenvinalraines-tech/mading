@@ -58,6 +58,8 @@ import '../../features/running_text/domain/repositories/running_text_repository.
     as _i331;
 import '../../features/running_text/domain/usecases/running_text_usecases.dart'
     as _i441;
+import '../../features/running_text/presentation/bloc/running_text_bloc.dart'
+    as _i103;
 import '../network/auth_interceptor.dart' as _i908;
 import 'register_module.dart' as _i291;
 
@@ -117,6 +119,13 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i153.AuthRepositoryImpl(
         remoteDataSource: gh<_i107.AuthRemoteDataSource>(),
         localDataSource: gh<_i852.AuthLocalDataSource>(),
+      ),
+    );
+    gh.factory<_i103.RunningTextBloc>(
+      () => _i103.RunningTextBloc(
+        gh<_i441.GetRunningTextsUseCase>(),
+        gh<_i441.AddRunningTextUseCase>(),
+        gh<_i441.DeleteRunningTextUseCase>(),
       ),
     );
     gh.lazySingleton<_i188.LoginUseCase>(

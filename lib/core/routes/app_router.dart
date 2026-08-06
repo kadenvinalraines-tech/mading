@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/approval/presentation/pages/approval_dashboard_page.dart';
 import '../../features/content_slider/presentation/pages/slider_management_page.dart';
+import '../../features/running_text/presentation/pages/running_text_management_page.dart';
 
 class AppRouter {
   static final router = GoRouter(
@@ -27,6 +28,11 @@ class AppRouter {
         path: '/slider-management',
         name: 'slider-management',
         builder: (context, state) => const SliderManagementPage(),
+      ),
+      GoRoute(
+        path: '/running-text',
+        name: 'running-text',
+        builder: (context, state) => const RunningTextManagementPage(),
       ),
     ],
   );
